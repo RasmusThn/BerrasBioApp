@@ -1,0 +1,80 @@
+﻿@model IEnumerable<DataLibrary.Models.ActiveMovieModel>
+@{
+     ViewData["Title"] = "Now Showing";
+}
+<head>
+    <script>
+    </script>
+</head>
+<div class="container-fluid vh-100 d-flex">
+
+    <div class="col-sm col">
+        <table id="myTable" class="table">
+            <thead>
+                <tr>
+                    <th>                         
+                        @Html.DisplayNameFor(model => model.SaloonModel)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MovieModel.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TimeModel.ShowTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SaloonModel.AvailableSeats)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaloonModel.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MovieModel.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeModel.ShowTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.SaloonModel.AvailableSeats)
+                        </td>
+                        <td>
+                            @{
+                                if (item.SaloonModel.AvailableSeats <= 0)
+                                {
+                                    <p>Full</p>
+
+                                }
+                                else if(item.TimeModel.ShowTime > DateTime.Now.AddDays(5) )
+                                {
+                                    <div data-toogle="tooltip" title="Can only be booked 5 days before Showtime">UnBookable</div>
+                                }
+                                else
+                                {
+                                    <a asp-controller="Booking" asp-action="Create" 
+                                    asp-route-activeMovieModelId="@item.Id"
+                                    >Book Here</a>
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        
+    </div>
+</div>

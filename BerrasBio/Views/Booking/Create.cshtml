@@ -1,0 +1,93 @@
+﻿@using DataLibrary.Models*
+
+@model BerrasBioApp.Models.BookingViewModel
+
+@{
+    ViewData["Title"] = "Booking";
+}
+<div class="container-fluid d-flex">
+ 
+    <div class="col-sm col">
+        <h1>Book @ViewBag.Movie.Title</h1>
+           @Html.AntiForgeryToken()
+
+        <hr />
+        <div class="row">
+            <div class="col-sm-4"><img class="w-50" src="@ViewBag.Movie.ImgSrc" /></div>
+            <div class="col-sm-4 col">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label" ></label>
+                        <input asp-for="FirstName" class="form-control" id="fname" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" id="lname"/>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmailAddress" class="control-label"></label>
+                        <input asp-for="EmailAddress" class="form-control" id="email"/>
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BookedTickets" class="control-label"></label>
+                        <input asp-for="BookedTickets" class="form-control" id="bookedticks"/>
+                        <span asp-validation-for="BookedTickets" class="text-danger"></span>
+                        <h3 class="Full">@ViewBag.Full</h3>
+                    </div>
+                   <div class="form-group">
+                        <input type="hidden" asp-for="ActiveMovieModelId" />
+                        <input type="hidden"  asp-for="@TempData["price"]" id="price" />
+                        @*<span asp-validation-for="Price" class="text-danger"></span>*@
+                    </div>
+
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onClick="submitText()">
+                        Book
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Your Booking</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body" id="bodyModal">  
+
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer form-group">
+                                    <input type="submit" value="Create" class="btn btn-success" />
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4">
+               @ViewBag.Movie.Title 
+               <hr />
+               @ViewBag.Movie.Genre
+               <hr />
+               @ViewBag.Saloon.Name
+               <hr />
+               @ViewBag.Time.ShowTime
+               <hr />
+               @TempData["price"];- per ticket
+            </div>
+        </div>
+        <div>
+            <a asp-action="ListView" asp-controller="ActiveMovie">Back to Movies</a>
+        </div>
+    </div>
+</div>

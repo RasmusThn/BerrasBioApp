@@ -1,0 +1,133 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: black;
+    
+}
+
+.col {
+    padding: 1rem;
+    background-color: darkslategray;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: #000f;
+    text-align: center;
+    
+    
+}
+.vh-100{
+    min-height:100vh;
+    
+}
+
+
+.img-home {
+    max-width: 40%;
+    height: 30%;
+    border: solid 10px;
+    border-radius: 10px;
+}
+
+.img-reklam {
+    max-width: 100%;
+    height: 30%;
+    border: solid;
+    border-radius: 10px;
+    scroll-behavior: auto;
+    text-decoration: none;
+    margin-top: 100%
+}
+
+.text-reklam {
+    font-weight: bold;
+    font-size: 100%;
+    margin-bottom: 50%;
+}
+
+.a-img:hover {
+    color: black;
+    border-color: black;
+}
+.a-img {
+    border-color: black;    
+    color:black;
+}
+
+a {
+    text-decoration: none;
+}
+ a-star:visited {
+    color:none;
+
+ }
+
+a-star:hover {
+    background-color: none;
+    color: black;
+}
+
+.checked {
+    color: orange;
+}
+.unchecked{
+    color:black;
+}
+
+.text-home {
+    text-align: center;
+    font-size: 120%;
+    font-style: oblique;
+    font-weight: bold;
+}
+.contact-text {
+    
+    text-align:center;
+    font-size:x-large;
+    font-weight:bold;
+
+}
+.text-background {
+    margin-top:50px;   
+    
+}
+.contact-menu{
+
+    font-size:200%;
+    
+}
+.top-menu{
+    padding-top:50px;
+}
+.Full{
+    color: red;
+    font-style:oblique;
+}
+
+.hide {
+    display: none;
+}
+
+.myDIV:hover + .hide {
+    display: block;
+    color: red;
+}
+
+.contactDiv{
+    display:none;
+}

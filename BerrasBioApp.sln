@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BerrasBio", "BerrasBio\BerrasBio.csproj", "{AF0C716C-DA46-4411-AF81-EBBB25FC90BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{1673F6DA-A58F-4715-8B55-BBCD6AA36EEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF0C716C-DA46-4411-AF81-EBBB25FC90BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0C716C-DA46-4411-AF81-EBBB25FC90BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0C716C-DA46-4411-AF81-EBBB25FC90BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0C716C-DA46-4411-AF81-EBBB25FC90BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1673F6DA-A58F-4715-8B55-BBCD6AA36EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1673F6DA-A58F-4715-8B55-BBCD6AA36EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1673F6DA-A58F-4715-8B55-BBCD6AA36EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1673F6DA-A58F-4715-8B55-BBCD6AA36EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72713710-5598-4F6F-895C-45AFC67AD986}
+	EndGlobalSection
+EndGlobal
